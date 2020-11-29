@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/jripke74/nodeJs/issues"
   },
-  "homepage": "https://github.com/jripke74/nodeJs#readme"
+  "homepage": "https://github.com/jripke74/nodeJs#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
 }
