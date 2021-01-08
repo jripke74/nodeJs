@@ -24,7 +24,7 @@ class Product {
     }
     return dbOp
       .then((result) => {
-        console.log(result);
+        console.log('saved');
       })
       .catch((err) => console.log(err));
   }
@@ -36,7 +36,7 @@ class Product {
       .find()
       .toArray()
       .then((products) => {
-        console.log(products);
+        console.log('retrieved products');
         return products;
       })
       .catch((err) => {
@@ -51,7 +51,7 @@ class Product {
       .find({ _id: new mongodb.ObjectId(prodId) })
       .next()
       .then((product) => {
-        console.log(product);
+        console.log('found by ID');
         return product;
       })
       .catch((err) => {

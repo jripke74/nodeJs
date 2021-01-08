@@ -68,7 +68,7 @@ exports.postCart = (req, res, next) => {
       return req.user.addToCart(product);
     })
     .then((result) => {
-      console.log('done');
+      console.log('Added to cart!');
     });
   // let fetchCart;
   // let newQuantity = 1;
