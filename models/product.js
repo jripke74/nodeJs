@@ -26,7 +26,9 @@ class Product {
       .then((result) => {
         console.log('saved');
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   static fetchAll() {

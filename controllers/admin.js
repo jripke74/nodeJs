@@ -60,6 +60,7 @@ exports.postEditProduct = (req, res, next) => {
   const updatedPrice = req.body.price;
   const updatedImageUrl = req.body.imageUrl;
   const updatedDesc = req.body.description;
+
   const product = new Product(
     updatedTitle,
     updatedPrice,
@@ -96,5 +97,4 @@ exports.postDeleteProduct = (req, res, next) => {
       res.redirect("/admin/products");
     })
     .catch((err) => console.log(err));
-  res.redirect("/admin/products");
 };
