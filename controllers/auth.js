@@ -93,7 +93,7 @@ exports.postSignup = (req, res, next) => {
           return transporter.sendMail({
             to: email,
             from: 'jeff@jeffripke.com',
-            subject: 'Signup suceeded',
+            subject: 'Signup succeeded!',
             html: '<h1>You are succesfull</h1>'
           });
         })
@@ -112,3 +112,17 @@ exports.postLogout = (req, res, next) => {
     res.redirect('/');
   });
 };
+
+exports.getReset = (req, res, next) => {
+  let message = req.flash('error');
+  if (message.length > 0) {
+    message = message[0];
+  } else {
+    message = null;
+  }
+  res.render('auth/reset', {
+    path: '/reset',
+    pageTitle: 'Reset Password',
+    errorMessage: message
+  });
+}
