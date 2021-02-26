@@ -18,7 +18,13 @@ router.post(
     body(
       'password',
       'Please enter a password with at least 12 characters.'
-    ).isLength({ min: 12 })
+    ).isLength({ min: 12 }),
+    body('confirmPassword').custom((value, { req }) => {
+      if (value !== req.body.password) {
+        throw new Error('Passwords have to match!');
+      }
+      return true;
+    })
   ],
   authController.postSignup
 );
